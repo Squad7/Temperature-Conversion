@@ -7,6 +7,47 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2.5*" />
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="3*" />
+
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="Header" Grid.ColumnSpan="3" HorizontalAlignment="Center" Height="46" Margin="10,10,0,0" TextWrapping="Wrap" Text="Celsius to Fahrenheit Conversion" VerticalAlignment="Top" Width="490" TextAlignment="Center" FontSize="24" FontWeight="Bold" TextDecorations="{x:Null}"/>
+
+        <TextBox x:Name="CelciusBox" Height="68"  Grid.Row="2" TextWrapping="Wrap" Text="36" VerticalAlignment="Center" HorizontalAlignment="Left" Width="113" TextAlignment="Center" FontSize="48"  BorderBrush="DarkGray" Margin="20,30,0,29"/>
+        <TextBox x:Name="FahrenheitBox"  Height="68"  Grid.Row="2" Grid.Column="2" TextWrapping="Wrap" Text="36" VerticalAlignment="Center" HorizontalAlignment="Center" Width="113" TextAlignment="Center" FontSize="48" Margin="0,30,75,29"/>
+
+        <TextBlock HorizontalAlignment="Left" Height="68" Margin="138,30,0,0" Grid.Row="2" TextWrapping="Wrap" Text="°C" VerticalAlignment="Top" Width="59" TextAlignment="Center" FontSize="48" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Height="68" Margin="128,31,0,0" Grid.Row="2" Grid.Column="2" TextWrapping="Wrap" Text="°F" VerticalAlignment="Top" Width="58" TextAlignment="Center" FontSize="48" FontWeight="Bold"/>
+
+
+        <TextBlock x:Name="EqualsSymbol" Grid.Column="1" HorizontalAlignment="Center" Height="68" Grid.Row="2"  Text="=" VerticalAlignment="Center" Width="83" FontSize="60" TextAlignment="Center" FontWeight="Bold" TextDecorations="{x:Null}" Margin="10,33,10,32" FontFamily="Perpetua"/>
+
+
+        <TextBlock x:Name="CelciusTitle" HorizontalAlignment="Left" Height="33" Margin="16,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Celcius °C" VerticalAlignment="Top" Width="181" TextAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="FahrenheitTitle" HorizontalAlignment="Left" Height="33" Margin="16,10,0,0" Grid.Row="1" Grid.Column="2" Text="Fahrenheit °F" VerticalAlignment="Top" Width="181" TextAlignment="Center" FontSize="20"/>
+
+
+        <Button x:Name="ConvertButton" Content="Convert" HorizontalAlignment="Right"  Height="42"  Grid.Row="3" VerticalAlignment="Center" Width="148" Click="ConvertButton_Click"   />
+        <Button x:Name="ResetButton" Content="Reset" HorizontalAlignment="Left" Grid.Column="2" Height="41"  Grid.Row="3" VerticalAlignment="Center" Width="148" />
+
+
+
+
+
+
+
+
+
+
     </Grid>
 </Window>
