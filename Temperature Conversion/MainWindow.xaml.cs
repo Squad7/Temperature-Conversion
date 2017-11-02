@@ -27,7 +27,12 @@ namespace Temperature_Conversion
 
         private void ConvertButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"The Celcius Value is {FtoC()}: ");
+            if (TextInput += CelciusBox)
+              
+            //CelciusBox.Text = FtoC();
+            // MessageBox.Show($"The Celcius Value is {FtoC()}: ");
+        
+            FahrenheitBox.Text = CtoF();
         }
 
         public string FtoC()
@@ -35,9 +40,19 @@ namespace Temperature_Conversion
             if (FahrenheitBox.Text != "")
             {
                double C = ((double.Parse(FahrenheitBox.Text) - 32) / 9) * 5;
-                return C.ToString(); yy 
+                return C.ToString(); 
             }
             return "";
         }
+        public string CtoF()
+        {
+            if (CelciusBox.Text != "")
+            {
+                double F = ((double.Parse(CelciusBox.Text) * 9) / 5) + 32;
+                return F.ToString();
+            }
+            return "";
+        }
+
     }
 }
