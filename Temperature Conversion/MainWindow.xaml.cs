@@ -25,34 +25,68 @@ namespace Temperature_Conversion
             InitializeComponent();
         }
 
-        private void ConvertButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (TextInput += CelciusBox)
-              
-            //CelciusBox.Text = FtoC();
-            // MessageBox.Show($"The Celcius Value is {FtoC()}: ");
-        
-            FahrenheitBox.Text = CtoF();
-        }
-
+        //This converts Fahrenheit into Celcius 
         public string FtoC()
         {
             if (FahrenheitBox.Text != "")
             {
-               double C = ((double.Parse(FahrenheitBox.Text) - 32) / 9) * 5;
-                return C.ToString(); 
-            }
-            return "";
-        }
-        public string CtoF()
-        {
-            if (CelciusBox.Text != "")
-            {
-                double F = ((double.Parse(CelciusBox.Text) * 9) / 5) + 32;
-                return F.ToString();
+                int temp;
+                if (int.TryParse(FahrenheitBox.Text, out temp))
+                {
+                    double C = ((double.Parse(FahrenheitBox.Text) - 32) / 9) * 5;
+                    return C.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Please eneter a number");
+                }
             }
             return "";
         }
 
+        //This converts Celcius into Fahrenheight
+        public string CtoF()
+        {
+            if (CelciusBox.Text != "")
+            {
+                int temp;
+                if (int.TryParse(CelciusBox.Text, out temp))
+                {
+                    double F = ((double.Parse(CelciusBox.Text) * 9) / 5) + 32;
+                    return F.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a number");
+                }
+            }
+            return "";
+        }
+
+       private void FahrenheitBox_TextChanged(object sender, TextChangedEventArgs e)
+       {
+            if (FahrenheitBox.IsFocused)
+            {
+                CelciusBox.Text = FtoC();
+
+            }
+                
+       }
+
+
+        private void CelciusBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (CelciusBox.IsFocused)
+            {
+
+                FahrenheitBox.Text = CtoF();
+            }
+        }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            CelciusBox.Clear();
+            FahrenheitBox.Clear();
+        }
     }
 }
